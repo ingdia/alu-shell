@@ -8,3 +8,5 @@ use command chown to change the owner of the file to betty
 using touch to create a file hello
 #changing the mode of file hello
 using chmod to change the mode of hello 
+#giving the permision of owner and group owner to execute the file 
+using chmod and 754 to chmod of the hello file
