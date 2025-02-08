@@ -4,3 +4,5 @@
 use groups command
 #changing owner 
 use command chown to change the owner of the file to betty
+#creating an empty file 
+using touch to create a file hello
