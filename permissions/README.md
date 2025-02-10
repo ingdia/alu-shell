@@ -11,4 +11,4 @@ using chmod to change the mode of hello
 #giving the permision of owner and group owner to execute the file 
 using chmod and 754 to chmod of the hello file
 #giving the permission to execute to anyone
-using chmod 755 to give access to  everyone
+adds execution permission to the owner, the group owner and the other users, to the file hello
