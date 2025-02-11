@@ -22,3 +22,6 @@ usind reference as key word
 using find . and chmod
 # changes the group owner to school for the file hello
 using command chown :groupname
+# changes the owner to vincent and the group owner to staff
+using chown to change the ownership
+
