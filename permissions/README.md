@@ -20,3 +20,5 @@ using sudo chmod 753
 usind reference as key word
 #Create a script that adds execute permission to all subdirectories of the current directory
 using find . and chmod
+# changes the group owner to school for the file hello
+using command chown :groupname
