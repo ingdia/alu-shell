@@ -24,4 +24,5 @@ using find . and chmod
 using command chown :groupname
 # changes the owner to vincent and the group owner to staff
 using chown to change the ownership
-
+#use of symbolic
+i used symbolic link like -h
