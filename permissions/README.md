@@ -18,3 +18,5 @@ using sudo chmod  007
 using sudo chmod 753
 #sets the mode of the file hello the same as olleh’s mode
 usind reference as key word
+#Create a script that adds execute permission to all subdirectories of the current directory
+using find . and chmod
