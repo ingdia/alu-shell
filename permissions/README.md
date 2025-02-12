@@ -26,3 +26,5 @@ using command chown :groupname
 using chown to change the ownership
 #use of symbolic
 i used symbolic link like -h
+# If only
+i used --from=guillaume
