@@ -1,5 +1,5 @@
-#!/bin/bash
-#using while loop to print words 10 time 
+#!/usr/bin/env bash 
+#to print words 10 time 
 x=0;
 while((x<=9)) do
 echo "Best School"
