@@ -3,10 +3,10 @@
 x=0;
 while [ $x -lt 10 ]
 do
-echo " Best School"
+echo "Best School"
 if [ $x -eq 8 ]
 then 
-echo " Hi "
+echo "Hi"
 fi
 ((x++))
 done 
