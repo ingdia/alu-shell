@@ -1,7 +1,8 @@
 #!/usr/bin/env bash 
 #to print words 10 time 
 x=0;
-while [ $x lt 10 ] do
+while [ $x -lt 10 ] 
+do
 echo "Best School"
-((x += 1))
+((x++))
 done 
