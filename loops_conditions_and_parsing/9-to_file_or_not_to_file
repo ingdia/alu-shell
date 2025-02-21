@@ -1,18 +1,20 @@
 #!/usr/bin/env bash
-#using if and else for  check how file is 
+#using if and else for  check how file is
 if [ -e "school" ]; then
   echo "school file exists"
 
-  if [ -s "school" ]; then
-    echo "school file is empty"
-  else
-    echo "school file is not empty"  # Correct order here
+  if [ -f "school" ]; then #Check if it's a regular file FIRST
+      if [ -s "school" ]; then
+        echo "school file is empty"
+      else
+        echo "school file is not empty"
+      fi
+      echo "school is a regular file"
+  else #If it's NOT a regular file.
+      if [ -d "school" ]; then #Checking if it's a directory
+          echo "school file is not empty" #A directory IS NOT empty.
+      fi
   fi
-
-  if [ -f "school" ]; then
-    echo "school is a regular file"
-  fi
-
 else
   echo "school file does not exist"
 fi
