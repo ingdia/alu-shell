@@ -1,0 +1,13 @@
+#!/bin/bash
+# Loop through files in the current directory
+for file in *
+do
+    if [[ "$file" == .* ]]; then
+        continue
+    fi  
+    if [[ "$file" =~ - ]]; then
+        echo "${file#*-}"
+    else
+        echo "$file"
+    fi
+done
