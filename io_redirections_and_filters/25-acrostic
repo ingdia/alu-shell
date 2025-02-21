@@ -1,2 +1,2 @@
 #!/bin/bash
-tr -d '\n' | cut -c1 | tr '[:lower:]' '[:upper:]'
+cut -c 1 | paste -s -d 
