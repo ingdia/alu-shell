@@ -1,17 +1,15 @@
 #!/usr/bin/env bash
-# Using while loop to display clock from Hour: 0 to Hour: 12
-
-hour=0;
-
-while [ $hour -le 12 ]; do
-    echo "Hour: $hour"
-
-    minute=1;
-    while [ $minute -le 59 ]; do
-        echo "$minute"
-        ((minute++))
-    done
-
-    ((hour++))  
+# Using while loop 
+ hour = 1
+ minutes=1
+ while [$minutes<60]
+ do
+	 echo "$minutes"
+	 (($minutes))
+ done
+ while [$hour<=12 ] 
+ do
+ echo "hour"	 
+(($hour++))  
 done
 
