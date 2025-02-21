@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 # Loop through files in the current directory
 for file in *
 do
