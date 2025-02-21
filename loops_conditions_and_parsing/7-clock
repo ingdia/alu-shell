@@ -1,15 +1,13 @@
 #!/usr/bin/env bash
-# Using while loop 
- hour = 1
- minutes=1
- while [$minutes<60]
- do
-	 echo "$minutes"
-	 (($minutes))
- done
- while [$hour<=12 ] 
- do
- echo "hour"	 
-(($hour++))  
+# Using while loop
+hour=0  # Start from 0 as per the prompt
+minutes=1
+while [ $hour -le 12 ]; do
+  echo "Hour: $hour"  # Print the hour value
+  while [ $minutes -le 59 ]; do
+    echo "$minutes"
+    minutes=$((minutes + 1)) # Increment minutes
+  done
+  hour=$((hour + 1))      # Increment hour
+  minutes=1              # Reset minutes for the next hour
 done
-
