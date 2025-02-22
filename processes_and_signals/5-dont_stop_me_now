@@ -1,12 +1,5 @@
 #!/usr/bin/env bash
-# Stops the 4-to_infinity_and_beyond process using kill
-prog_pid=$(pgrep -x "4-to_infinity_and_beyond")
-
-# Check if the process is running before attempting to kill it
-if [[ -n "$prog_pid" ]]; then
-    kill -SIGTERM "$prog_pid"
-    echo "Process 4-to_infinity_and_beyond (PID: $prog_pid) has been terminated."
-else
-    echo "Process 4-to_infinity_and_beyond is not running."
-fi
+# Stops the 4-to_infinity_and_beyond
+# Find and terminate the process silently
+pgrep -x "4-to_infinity_and_beyond" | xargs kill -SIGTERM 2>/dev/null
 
