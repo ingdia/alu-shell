@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-#killing beyond process using pkill.
+# Stops the 4-to_infinity_and_beyond process using pkill.
 
 pkill 4-to_infinity_and_beyond
 
-if [[ $? -eq 0 ]]; then # Check the exit status of pkill
-    echo "Process 4-to-infinity_and_beyond terminated (or not found)."
+if pkill 4-to_infinity_and_beyond; then # Correct way to check exit status
+    echo "Process 4-to-infinity_and_beyond terminated."
 else
-    echo "An error occurred while trying to terminate the process."
+    echo "Process 4-to-infinity_and_beyond not found or could not be terminated."
 fi
