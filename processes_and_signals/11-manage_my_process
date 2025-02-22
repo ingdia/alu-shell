@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# File path for PID
+# Define the PID file location
 PID_FILE="/var/run/my_process.pid"
 
 # Function to start the process
@@ -33,6 +33,7 @@ stop_process() {
 restart_process() {
     stop_process
     start_process
+    # Only output the restart message
     echo "manage_my_process restarted"
 }
 
