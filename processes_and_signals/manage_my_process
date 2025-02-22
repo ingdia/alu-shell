@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # Define the output file
 OUTPUT_FILE="/tmp/my_process"
-
-# Infinite loop to write to the file
-while true; do
+while [[ 1 -eq 1 ]]
+do
     echo "I am alive!" >> "$OUTPUT_FILE"
     sleep 2
 done
