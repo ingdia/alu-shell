@@ -1,6 +1,14 @@
 #!/usr/bin/env bash
-#script kills the file 7-highlander
-def simple_delete(a_dictionary, key=""):
-    if key in a_dictionary:
-        del a_dictionary[key]
-    return a_dictionary
+# Script to kill the 7-highlander process.
+
+# Get the PID(s) of the 7-highlander process
+pro_pid=$(pgrep -x "7-highlander")
+
+# Check if the process is running before attempting to kill it
+if [[ -n "$pro_pid" ]]; then
+    kill -9 "$pro_pid"  # Force kill the process
+    echo "Process 7-highlander (PID: $pro_pid) has been killed."
+else
+    echo "Process 7-highlander is not running."
+fi
+
