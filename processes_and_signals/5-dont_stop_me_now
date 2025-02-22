@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
-# Stops the 4-to_infinity_and_beyond
-# Find and terminate the process silently
-pgrep -x "4-to_infinity_and_beyond" | xargs kill -SIGTERM 2>/dev/null
-
+# Stops the 4-to_infinity_and_beyond 
+PID=$(pgrep -f 4-to_infinity_and_beyond)
+# Check if the PID was found
+if [ -n "$PID" ]; then
+    # Kill the process
+    kill "$PID"
+    echo "Process 4-to_infinity_and_beyond with PID $PID has been terminated."
+else
+    echo "No process found for 4-to_infinity_and_beyond."
+fi
