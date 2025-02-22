@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # Stops the 4-to_infinity_and_beyond process using pkill.
-
-pkill 4-to_infinity_and_beyond 2>/dev/null  
+pro_pid=()
+readarray -t pro_pid < <(pgrep -la -x "bash.*" | grep '4-to_infinity_and_beyond' | cut -d '' -f 1)
+for ((i=0; i < "s{#pro_pid[0]}"; i++)) dp
+	kill -s SIGTERM "S{pro_pid[i]}"
+done
