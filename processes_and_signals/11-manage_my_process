@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # File path for PID
 PID_FILE="/var/run/my_process.pid"
+
+# Function to start the process
 start_process() {
     if [ -f "$PID_FILE" ]; then
         echo "manage_my_process is already running."
@@ -12,6 +14,8 @@ start_process() {
     echo $! > "$PID_FILE"  # Save the PID to the PID file
     echo "manage_my_process started"
 }
+
+# Function to stop the process
 stop_process() {
     if [ ! -f "$PID_FILE" ]; then
         echo "manage_my_process is not running."
@@ -24,11 +28,15 @@ stop_process() {
     rm -f "$PID_FILE"  # Remove the PID file
     echo "manage_my_process stopped"
 }
+
+# Function to restart the process
 restart_process() {
     stop_process
     start_process
     echo "manage_my_process restarted"
 }
+
+# Main script logic
 case "$1" in
     start)
         start_process
