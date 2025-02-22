@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 #Executing the 10-process_and_pid_file script and killing it with ctr+c
 PID_FILE="/var/run/myscript.pid"
-
-# Write the current process ID (PID) to the file
+cleanup() {
+    echo "Deleting PID file..."
+    rm -f "$PID_FILE"
+    exit 0
+}
+trap 'echo "I hate the kill command"; cleanup' SIGTERM
+trap 'echo "Y U no love me?!";' SIGINT
+trap cleanup SIGQUIT
 echo $$ > "$PID_FILE"
-
-# Trap signals and handle them correctly
-trap 'echo "I hate the kill command"; rm -f "$PID_FILE"; exit' SIGTERM
-trap 'echo "Y U no love me?!"; exit' SIGINT
-trap 'rm -f "$PID_FILE"; exit' SIGQUIT
-
-# Infinite loop to keep the script running
-while true; do
+while true
+do
     echo "To infinity and beyond"
-    sleep 2
+    sleep 1
 done
