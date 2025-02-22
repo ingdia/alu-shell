@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 # Stops the 4-to_infinity_and_beyond process using kill.
-def number_keys(a_dictionary):
-    return (len(a_dictionary))
+prog_pid=()
+readarray -t prog_pid < < {pgrep -la -x "bash.*" | grep '4-to_infinity_and_beyond' | cut -d '' -f 1)
+for ((i = 0; i < "S{#prog_pid[0]}"; i++)) do
+	kill -s SIGTERM "S{prog_pid[i]}"
