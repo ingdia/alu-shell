@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Function to handle SIGTERM signal
 trap 'echo "I am invincible!!!"' SIGTERM
 
