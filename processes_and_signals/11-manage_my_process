@@ -1,55 +1,45 @@
 #!/usr/bin/env bash
 # File path for PID
 PID_FILE="/var/run/my_process.pid"
-
-# Start the process
-start() {
-    # Check if the process is already running
+start_process() {
     if [ -f "$PID_FILE" ]; then
         echo "manage_my_process is already running."
         exit 1
     fi
+
     # Start the manage_my_process script in the background
     ./manage_my_process &
-    # Save its PID
-    echo $! > "$PID_FILE"
+    echo $! > "$PID_FILE"  # Save the PID to the PID file
     echo "manage_my_process started"
 }
-
-# Stop the process
-stop() {
-    # Check if the PID file exists
+stop_process() {
     if [ ! -f "$PID_FILE" ]; then
         echo "manage_my_process is not running."
         exit 1
     fi
-    # Kill the process using the stored PID
-    kill $(cat "$PID_FILE")
-    # Remove the PID file
-    rm -f "$PID_FILE"
+
+    # Read the PID from the PID file and kill the process
+    PID=$(cat "$PID_FILE")
+    kill "$PID"
+    rm -f "$PID_FILE"  # Remove the PID file
     echo "manage_my_process stopped"
 }
-
-# Restart the process
-restart() {
-    stop
-    start
+restart_process() {
+    stop_process
+    start_process
     echo "manage_my_process restarted"
 }
-
-# Check arguments
 case "$1" in
     start)
-        start
+        start_process
         ;;
     stop)
-        stop
+        stop_process
         ;;
     restart)
-        restart
+        restart_process
         ;;
     *)
         echo "Usage: manage_my_process {start|stop|restart}"
         ;;
 esac
-

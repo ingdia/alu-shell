@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Loop indefinitely and write "I am alive!" to /tmp/my_process
+OUTPUT_FILE="/tmp/my_process"
+
 while true; do
-    echo "I am alive!" >> /tmp/my_process
+    echo "I am alive!" >> "$OUTPUT_FILE"
     sleep 2
 done
