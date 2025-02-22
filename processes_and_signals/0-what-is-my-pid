@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#we are going to see the process id "
+ps 
