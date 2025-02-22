@@ -1,4 +1,4 @@
-#!/usr/boin/env bash
+#!/usr/bin/env bash
 #using while loop with IFS
 while IFS=:  read -r username password uid gid info home shell
 do
