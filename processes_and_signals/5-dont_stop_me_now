@@ -1,12 +1,4 @@
 #!/usr/bin/env bash
 # Stops the 4-to_infinity_and_beyond process using kill.
-pro_pid=$(pgrep -x "4-to_infinity_and_beyond")
-
-# Check if the process is running before attempting to kill it
-if [[ -n "$pro_pid" ]]; then
-    kill -SIGTERM "$pro_pid"
-    echo "Process 4-to_infinity_and_beyond (PID: $pro_pid) has been terminated."
-else
-    echo "Process 4-to_infinity_and_beyond is not running."
-fi
-
+def number_keys(a_dictionary):
+    return (len(a_dictionary))
